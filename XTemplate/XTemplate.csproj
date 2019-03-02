@@ -11,22 +11,20 @@
     <RootNamespace>XTemplate</RootNamespace>
     <AssemblyName>XTemplate</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\Bin4\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;NET4</DefineConstants>
-    <DocumentationFile>..\..\Bin4\XTemplate.XML</DocumentationFile>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>..\..\Bin\XTemplate.XML</DocumentationFile>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <OutputPath>..\..\Bin4\</OutputPath>
-    <DefineConstants>TRACE;NET4</DefineConstants>
-    <DocumentationFile>..\..\Bin4\XTemplate.XML</DocumentationFile>
+    <OutputPath>..\..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>..\..\Bin\XTemplate.XML</DocumentationFile>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -41,9 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\NewLife.Core\Properties\AssemblyInfo_.cs">
-      <Link>Properties\AssemblyInfo_.cs</Link>
-    </Compile>
+    <Compile Include="Setting.cs" />
     <Compile Include="Tags\TagTemplate.cs" />
     <Compile Include="Templating\Directive.cs" />
     <Compile Include="Templating\Template2.cs">
@@ -64,21 +60,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="说明.txt" />
     <None Include="UpdateInfo.txt" />
-    <Content Include="XTemplate架构.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NewLife.Core\NewLife.Core.csproj">
-      <Project>{5813C22E-EEB3-4DEE-A45C-BB218041193A}</Project>
-      <Name>NewLife.Core</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Test.xt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NewLife.Core">
+      <Version>7.0.6712.2419</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
